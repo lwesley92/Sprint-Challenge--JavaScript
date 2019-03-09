@@ -21,9 +21,33 @@ function multiply(x, y) {
   return x * y; 
 } 
 
-consume (10,16,multiply); 
+consume(10,16,multiply); 
 
-function greeting(first_name,last_name)
+function greeting(first_name,last_name) {
+  return `Hello ${first_name} ${last_name}, nice to meet you!`;
+}
+
+consume ("Mary","Poppins", greeting); 
+
+
+
+const external = "I'm outside the function"; 
+
+function myFunction() {
+  console.log(external); 
+  const internal = "Hello! I'm inside myFunction!"; 
+
+  function nestedFunction() {
+    console.log (internal); 
+  }; 
+nestedFunction(); 
+
+} 
+
+myFunction(); 
+
+
+
 
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
@@ -45,15 +69,15 @@ function greeting(first_name,last_name)
 // Explanation: 
 
 
-const external = "I'm outside the function";
+// const external = "I'm outside the function";
 
-function myFunction() {
-  console.log(external);
-  const internal = "Hello! I'm inside myFunction!";
+// function myFunction() {
+//   console.log(external);
+//   const internal = "Hello! I'm inside myFunction!";
 
-  function nestedFunction() {
-    console.log(internal);
-  };
-  nestedFunction();
-}
-myFunction();
+//   function nestedFunction() {
+//     console.log(internal);
+//   };
+//   nestedFunction();
+// }
+// myFunction();
