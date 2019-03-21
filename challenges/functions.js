@@ -6,6 +6,47 @@
   * The last parameter accepts a callback 
   * In the body of the function return the callback with the two parameters that you created
 */
+function consume (param1, param2, cb) 
+{
+  console.log(cb(param1, param2)); 
+} 
+
+function add(x, y) {
+  return x + y; 
+} 
+
+consume(2,2,add); 
+ 
+function multiply(x, y) {
+  return x * y; 
+} 
+
+consume(10,16,multiply); 
+
+function greeting(first_name,last_name) {
+  return `Hello ${first_name} ${last_name}, nice to meet you!`;
+}
+
+consume ("Mary","Poppins", greeting); 
+
+
+
+const external = "I'm outside the function"; 
+
+function myFunction() {
+  console.log(external); 
+  const internal = "Hello! I'm inside myFunction!"; 
+
+  function nestedFunction() {
+    console.log (internal); 
+  }; 
+nestedFunction(); 
+
+} 
+
+myFunction(); 
+
+
 
 
 /* Step 2: Create several functions to callback with consume();
@@ -28,15 +69,15 @@
 // Explanation: 
 
 
-const external = "I'm outside the function";
+// const external = "I'm outside the function";
 
-function myFunction() {
-  console.log(external);
-  const internal = "Hello! I'm inside myFunction!";
+// function myFunction() {
+//   console.log(external);
+//   const internal = "Hello! I'm inside myFunction!";
 
-  function nestedFunction() {
-    console.log(internal);
-  };
-  nestedFunction();
-}
-myFunction();
+//   function nestedFunction() {
+//     console.log(internal);
+//   };
+//   nestedFunction();
+// }
+// myFunction();
